@@ -6,12 +6,33 @@
     xmlns:views="clr-namespace:EmilioMVVM.Views"
     Shell.FlyoutBehavior="Disabled"
     Title="EmilioMVVM">
+    <Shell.TabBarBackgroundColor>
+        <Color>
+            black
+        </Color>
+    </Shell.TabBarBackgroundColor>
+    <Shell.TabBarTitleColor>
+        <Color>
+            yellow
+        </Color>
+    </Shell.TabBarTitleColor>
+    
+    <Shell.TabBarUnselectedColor>
+        <Color>
+            yellow
+        </Color>
+    </Shell.TabBarUnselectedColor>
 
+    <Shell.TabBarForegroundColor>
+        <Color>
+            yellow
+        </Color>
+    </Shell.TabBarForegroundColor>
     <TabBar>
         <ShellContent
             Title="Notes"
             ContentTemplate="{DataTemplate views:AllNotes}"
-            Icon="{OnPlatform 'icon_notes.png'}" />
+            Icon="{OnPlatform 'icon_notes.png'}"/>
 
         <ShellContent
             Title="About"

@@ -9,14 +9,14 @@ namespace EmilioMVVM.Models
 {
     internal class AllNotes
     {
-        public ObservableCollection<Note> Notes { get; set; } = new ObservableCollection<Note>();
+        public ObservableCollection<Note> Note { get; set; } = new ObservableCollection<Note>();
 
         public AllNotes() =>
-            LoadNotes();
-
-        public void LoadNotes()
+            LoadNotes_EGuerrero();
+            
+        public void LoadNotes_EGuerrero()
         {
-            Notes.Clear();
+            Note.Clear();
 
 
             string appDataPath = FileSystem.AppDataDirectory;
@@ -39,7 +39,7 @@ namespace EmilioMVVM.Models
 
 
             foreach (Note note in notes)
-                Notes.Add(note);
+                Note.Add(note);
         }
     }
 }

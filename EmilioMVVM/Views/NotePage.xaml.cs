@@ -1,18 +1,18 @@
 namespace EmilioMVVM.Views;
 
-[QueryProperty(nameof(ItemId), nameof(ItemId))]
+//[QueryProperty(nameof(ItemId), nameof(ItemId))]
 public partial class NotePage : ContentPage
 {
-	string _fileName = Path.Combine(FileSystem.AppDataDirectory, "notes.txt");
+	//string _fileName = Path.Combine(FileSystem.AppDataDirectory, "notes.txt");
 	public NotePage()
 	{
 		InitializeComponent();
-        string appDataPath = FileSystem.AppDataDirectory;
-        string randomFileName = $"{Path.GetRandomFileName()}.notes.txt";
+        //string appDataPath = FileSystem.AppDataDirectory;
+        //string randomFileName = $"{Path.GetRandomFileName()}.notes.txt";
 
-        LoadNote(Path.Combine(appDataPath, randomFileName));
+        //LoadNote(Path.Combine(appDataPath, randomFileName));
     }
-    private async void GuardarButton_Clicked_EGuerrero(object sender, EventArgs e)
+    /*private async void GuardarButton_Clicked_EGuerrero(object sender, EventArgs e)
     {
         if (BindingContext is Models.Note note)
             File.WriteAllText(note.Filename, TextEditor_EGuerrero.Text);
@@ -46,5 +46,5 @@ public partial class NotePage : ContentPage
     public string ItemId
     {
         set { LoadNote(value); }
-    }
+    }*/
 }

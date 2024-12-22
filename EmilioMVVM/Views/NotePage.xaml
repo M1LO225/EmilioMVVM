@@ -1,21 +1,35 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:EmilioMVVM.ViewModels"
              x:Class="EmilioMVVM.Views.NotePage"
-             Title="Note">
-    <VerticalStackLayout>
-        <Editor x:Name="TextEditor_EGuerrero"
+             Title="Nota">
+
+    <ContentPage.BindingContext>
+        <viewModels:NoteViewModel />
+    </ContentPage.BindingContext>
+    
+    <VerticalStackLayout Background="Black">
+        <Editor x:Name="TextEditor_EGuerrero" Margin="20"
                 Placeholder="Ingresa tus apuntes"
                 Text="{Binding Text}"
-                HeightRequest="100"/>
+                HeightRequest="100" TextColor="White"
+                PlaceholderColor="White"
+                BackgroundColor="#1C1C1E"/>
         <Grid ColumnDefinitions="*,*" ColumnSpacing="4" >
             
-            <Button Text="Guardar"
-                    Clicked="GuardarButton_Clicked_EGuerrero"/>
+            <Button Text="Guardar" Margin="20"
+                    Command="{Binding SaveCommand_EGuerrero}"
+                    BackgroundColor="#1C1C1E"
+                    BorderColor="Yellow"
+                    TextColor="Yellow"/>
             
-            <Button Grid.Column="1" 
+            <Button Grid.Column="1" Margin="20"
                     Text="Eliminar"
-                    Clicked="EliminarButton_Clicked_EGuerrero"/>
+                    Command="{Binding DeleteCommand}"
+                    BackgroundColor="#1C1C1E"
+                    BorderColor="Yellow"
+                    TextColor="Yellow"/>
             
         </Grid>
         

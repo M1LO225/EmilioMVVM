@@ -1,27 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:models="clr-namespace:EmilioMVVM.Models"
+             xmlns:viewModels="clr-namespace:EmilioMVVM.ViewModels"
              x:Class="EmilioMVVM.Views.AboutPage"
-             Title="AboutPage">
+             Title="Sobre Mi">
 
     <ContentPage.BindingContext>
-        <models:About />
+        <viewModels:AboutViewModel />
     </ContentPage.BindingContext>
 
-    <VerticalStackLayout Spacing="10" Margin="10">
-        <HorizontalStackLayout Spacing="10">
-            <Image Source="dotnet_bot.png"
-                   SemanticProperties.Description="The dot net bot waving hello!"
-                   HeightRequest="64" />
-            <Label FontSize="22" FontAttributes="Bold" Text="{Binding Title}" VerticalOptions="End" />
-            <Label FontSize="22" Text="{Binding Version}" VerticalOptions="End" />
-            <Label FontSize="22" FontAttributes="Bold" Text="Notes" VerticalOptions="End" />
-            <Label FontSize="22" Text="v1.0" VerticalOptions="End" />
-        </HorizontalStackLayout>
-
-        <Label Text="{Binding Message}" />
-        <Button Text="Learn more..." Clicked="LearnMore_Clicked_EGuerrero" />
+    <VerticalStackLayout BackgroundColor="Black">
+        <Image Source="foto.jpeg"
+                        HeightRequest="250"
+                        Margin="20"
+                        VerticalOptions="Center"/>
+   
+        <Label Text="{Binding Message}" TextColor="White" Margin="20"/>
+        <Button Text="Más sobre mi" Command="{Binding ShowMoreInfoCommand}" 
+                TextColor="Yellow" BackgroundColor="#1C1C1E" Margin="20"/>
         
         
     </VerticalStackLayout>

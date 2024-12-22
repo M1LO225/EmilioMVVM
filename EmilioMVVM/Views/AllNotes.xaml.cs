@@ -5,11 +5,16 @@ public partial class AllNotes : ContentPage
 	public AllNotes()
 	{
 		InitializeComponent();
-        BindingContext = new Models.AllNotes();
+        //BindingContext = new Models.AllNotes();
     }
-    protected override void OnAppearing()
+    private void ContentPage_NavigatedTo(object sender, NavigatedToEventArgs e)
     {
-        ((Models.AllNotes)BindingContext).LoadNotes();
+        notesCollection_EGuerrero.SelectedItem = null;
+    }
+
+    /*protected override void OnAppearing()
+    {
+        ((Models.AllNotes)BindingContext).LoadNotes_EGuerrero();
     }
 
     private async void Add_Clicked_EGuerrero(object sender, EventArgs e)
@@ -26,6 +31,6 @@ public partial class AllNotes : ContentPage
             await Shell.Current.GoToAsync($"{nameof(NotePage)}?{nameof(NotePage.ItemId)}={note.Filename}");
             notesCollection_EGuerrero.SelectedItem = null;
         }
-    }
+    }*/
 
 }
