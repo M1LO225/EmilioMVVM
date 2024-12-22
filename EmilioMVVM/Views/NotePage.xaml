@@ -26,7 +26,7 @@
             
             <Button Grid.Column="1" Margin="20"
                     Text="Eliminar"
-                    Command="{Binding DeleteCommand}"
+                    Command="{Binding DeleteCommand_EGuerrero}"
                     BackgroundColor="#1C1C1E"
                     BorderColor="Yellow"
                     TextColor="Yellow"/>
